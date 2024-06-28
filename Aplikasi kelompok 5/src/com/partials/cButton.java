@@ -1,5 +1,7 @@
 package com.partials;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class cButton extends JButton {
@@ -8,6 +10,7 @@ public class cButton extends JButton {
         super();
         setText(text);
         setBounds(x, y, width, height);
+        setBackground(Color.WHITE);
     }
 
 }

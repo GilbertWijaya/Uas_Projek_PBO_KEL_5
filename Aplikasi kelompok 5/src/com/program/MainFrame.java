@@ -54,7 +54,7 @@ public class MainFrame extends JFrame {
 
         mainPanel.setBounds(0, 0, 1000, 700);
         mainPanel.setLayout(null);
-        mainPanel.setBackground(Color.WHITE);
+        mainPanel.setBackground(Color.CYAN);
 
         labelJudul.setLayout(null);
         labelJudul.setBounds(50, 70, 250, 45);
@@ -81,17 +81,19 @@ public class MainFrame extends JFrame {
         labelKategori.setBackground(Color.WHITE);
         labelKategori.setFont(new Font("Poppins",Font.PLAIN, 20));
         
-        kategoriBox.addItem("Semua Umur");
-        kategoriBox.addItem("Anak-anak");
-        kategoriBox.addItem("Dewasa");
-        kategoriBox.addItem("dewasa");
-        kategoriBox.addItem("Remaja");
+        kategoriBox.addItem("(SU) Semua Umur");
+        kategoriBox.addItem("(A) Anak-anak");
+        kategoriBox.addItem("(D) Dewasa");
+        //kategoriBox.addItem("dewasa");
+        kategoriBox.addItem("(R) Remaja");
 
 
         Object[] header ={"Judul","Nama Pengarang","Penerbit","Tahun Cetak","Kategori"};
         DefaultTableModel dm = new DefaultTableModel(null, header);
         dataTabel = new cTable(dm);
         spDataTabel = new cScrollPane(dataTabel,50,300,880,350);
+
+        
         
         addButton.addActionListener(new java.awt.event.ActionListener() {
             
@@ -128,25 +130,27 @@ public class MainFrame extends JFrame {
                 txtNamaPengarang.setText("");
                 txtPenerbit.setText("");
                 txtTahunCetak.setText("");
-                kategoriBox.setSelectedItem("Semua Umur");
-
+                kategoriBox.setSelectedItem("(SU) Semua Umur");
+        
             }
 
         });
 
         
-        add(labelJudul);
-        add(txtJudul);
-        add(labelNamaPengarang);
-        add(txtNamaPengarang);
-        add(labelPenerbit);
-        add(txtPenerbit);
-        add(labelTahunCetak);
-        add(txtTahunCetak);
-        add(labelKategori);
-        add(kategoriBox);
-        add(spDataTabel);
-        add(addButton);
+        
+        mainPanel.add(labelJudul);
+        mainPanel.add(txtJudul);
+        mainPanel.add(labelNamaPengarang);
+        mainPanel.add(txtNamaPengarang);
+        mainPanel.add(labelPenerbit);
+        mainPanel.add(txtPenerbit);
+        mainPanel.add(labelTahunCetak);
+        mainPanel.add(txtTahunCetak);
+        mainPanel.add(labelKategori);
+        mainPanel.add(kategoriBox);
+        mainPanel.add(spDataTabel);
+        mainPanel.add(addButton);
+        add(mainPanel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
